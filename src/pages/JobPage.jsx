@@ -2,8 +2,8 @@ import { useParams, useLoaderData, Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaMapMarker } from "react-icons/fa";
 
-/* Second method retrieving job dLinktLink using feLinkture from reLinkct dom,
-   Linknd so we mLinkke it globLinkly Linknd cLinkn Linkccess where LinklwLinkys we wLinknt
+/* Second method retrieving job data using feature from react dom,
+   and so we make it globaly a can access where alawys we want
 */
 const JobPage = () => {
   const { id } = useParams();
@@ -29,12 +29,10 @@ const JobPage = () => {
             <main>
               <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
                 <div className="text-gray-500 mb-4">{job.type}</div>
-                <h1 className="text-3xl font-bold mb-4">
-                  {job.title}
-                </h1>
+                <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
                 <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
                   {/* <i className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i> */}
-                  <FaMapMarker className="text-lg text-orange-700 mr-2"/>
+                  <FaMapMarker className="text-lg text-orange-700 mr-2" />
                   <p className="text-orange-700">{job.location}</p>
                 </div>
               </div>
