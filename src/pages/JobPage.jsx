@@ -3,7 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaMapMarker } from "react-icons/fa";
 
 /* Second method retrieving job data using feature from react dom,
-   and so we make it globaly a can access where alawys we want
+   and so we make it globaly and we can access, where alawys we want
 */
 const JobPage = () => {
   const { id } = useParams();
@@ -32,7 +32,7 @@ const JobPage = () => {
                 <h1 className="text-3xl font-bold mb-4">{job.title}</h1>
                 <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
                   {/* <i className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"></i> */}
-                  <FaMapMarker className="text-lg text-orange-700 mr-2" />
+                  <FaMapMarker className="text-orange-700 mr-1" />
                   <p className="text-orange-700">{job.location}</p>
                 </div>
               </div>
@@ -67,7 +67,6 @@ const JobPage = () => {
                 <h3 className="text-xl">Contact Email:</h3>
 
                 <p className="my-2 bg-indigo-100 p-2 font-bold">
-                  contactEmail
                   {job.company.contactEmail}
                 </p>
 
@@ -82,7 +81,7 @@ const JobPage = () => {
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                 <h3 className="text-xl font-bold mb-6">Manage Job</h3>
                 <Link
-                  to="/add-job/:id"
+                  to={`/jobs/edit/${job.id}`}
                   className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                 >
                   Edit Job
