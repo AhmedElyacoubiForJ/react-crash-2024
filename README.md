@@ -19,6 +19,7 @@ npm i react-router-dom
 json-server
 npm i -D json-server
 npm run server
+npm i react-spinners
 
 # React + Vite
 
