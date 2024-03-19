@@ -1,37 +1,21 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLoaderData } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
+/* Second method retrieving job data using feature from react dom,
+   and so we make it globaly and can access where always we want
+*/
 const JobPage = () => {
   const { id } = useParams();
-  const [job, setJob] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const job = useLoaderData();
 
-  useEffect(() => {
-    const fetchJob = async () => {
-      try {
-        const response = await fetch(`/api/jobs/${id}`);
-        const data = await response.json();
-        setJob(data);
-      } catch (error) {
-        console.log("Error fetching job", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJob();
-  }, []);
-
-  return loading ? <Spinner /> : (
-    <h1>Job: {job.title} </h1>
-  );
+  return <h1>Job: {job.title} </h1>;
 };
 
-export default JobPage;
+// Feature from react router
+const jobLoader = async ({ params }) => {
+  const response = await fetch(`/api/jobs/${params.id}`);
+  const data = await response.json();
+  return data;
+};
 
-/* We do it a little differently,
- than we do when listing jobs
-data loader from react router dom
- and we make it globaly and can access where always we want
-but first we do it as usally we did */
+export { JobPage as default, jobLoader };
