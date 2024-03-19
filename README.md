@@ -18,6 +18,7 @@ npm i react-router-dom
 
 json-server
 npm i -D json-server
+npm run server
 
 # React + Vite
 
