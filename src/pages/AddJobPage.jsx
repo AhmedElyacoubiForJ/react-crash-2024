@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 /* submit call from outside, we want to make fetch calls central */
 const AddJobPage = ({ addJobSubmit }) => { 
@@ -33,6 +34,8 @@ const AddJobPage = ({ addJobSubmit }) => {
     };
 
     addJobSubmit(newJob);
+
+    toast.success('Job Added Successfully')
     /* After that go to jobs */
     return navigate('/jobs')
   };
