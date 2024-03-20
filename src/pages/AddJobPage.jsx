@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AddJobPage = () => {
+/* submit call from outside, we want to make fetch calls central */
+const AddJobPage = ({ addJobSubmit }) => { 
   const [title, setTitle] = useState("");
   const [type, setType] = useState("Full-Time");
   const [description, setDescription] = useState("");
@@ -10,6 +12,8 @@ const AddJobPage = () => {
   const [companyDescription, setCompanyDescription] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
+
+  const navigate = useNavigate()
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -24,10 +28,13 @@ const AddJobPage = () => {
         name: companyName,
         description: companyDescription,
         contactEmail,
-        contactPhone
-      }
-    }
-    console.log(newJob)
+        contactPhone,
+      },
+    };
+
+    addJobSubmit(newJob);
+    /* After that go to jobs */
+    return navigate('/jobs')
   };
 
   return (
