@@ -20,6 +20,7 @@ json-server
 npm i -D json-server
 npm run server
 npm i react-spinners
+npm i react-toastify
 
 # React + Vite
 
