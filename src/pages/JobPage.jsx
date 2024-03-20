@@ -1,6 +1,7 @@
 import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaMapMarker } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 /* Second method retrieving job data using feature from react dom,
    and so we make it globaly and we can access, where alawys we want
@@ -18,6 +19,8 @@ const JobPage = ({ deleteJob }) => {
     if (!confirm) return;
 
     deleteJob(jobId);
+
+    toast.success('Job deleted successfully')
 
     navigate('/jobs');
   };
