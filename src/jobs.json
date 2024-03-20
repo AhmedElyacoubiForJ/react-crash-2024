@@ -83,34 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "75ee",
-      "title": "Spring Boot Developer",
-      "type": "Part-Time",
-      "location": "Duisburg",
-      "description": "Fullstack",
-      "salary": "$80K - 90K",
-      "company": {
-        "name": "Deutsche Bahn",
-        "description": "",
-        "contactEmail": "db@dsdsd.de",
-        "contactPhone": "77777"
-      }
-    },
-    {
-      "id": "12ec",
-      "title": "test",
-      "type": "Part-Time",
-      "location": "Duisburg",
-      "description": "sas",
-      "salary": "Under $50K",
-      "company": {
-        "name": "Deutsche Bahn",
-        "description": "asasas",
-        "contactEmail": "db@dsdsd.de",
-        "contactPhone": "77777"
-      }
     }
   ]
 }
