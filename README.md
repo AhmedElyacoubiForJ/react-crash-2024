@@ -1,6 +1,5 @@
 [React Crash Course 2024](https://www.youtube.com/watch?v=LDB4uaJ87e0&t=144s)
 
-
 npm create vite@latest react-crash-2024
 
 npm install
@@ -9,6 +8,8 @@ npm run dev
 
 
 [Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
+
+[React-Toastify to style messages](https://blog.logrocket.com/using-react-toastify-style-toast-messages/)
 
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
